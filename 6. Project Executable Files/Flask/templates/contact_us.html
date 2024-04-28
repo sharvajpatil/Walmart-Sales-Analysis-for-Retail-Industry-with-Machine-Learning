@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='icon.png') }}" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        
+        h1 {
+            color: white;
+            padding-top: 10px;
+            text-align: center;
+            font-size: 60px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding-bottom: 20px; 
+       }
+        .form-background {
+            background-color: #C6E2FF; /* Changed background color */
+            padding: 50px 0; /* Added space above and below the form */
+       }
+        
+        input {
+            background-color: white;
+            width: 70%;
+            margin-left: 12%;
+            font-size: 20px;
+            padding: 16px 16px;
+            border-radius: 10px;
+            border-color: black;
+            margin-bottom: 20px;
+        }
+        
+        textarea {
+            background-color: white;
+            width: 70%;
+            margin-left: 12%;
+            font-size: 20px;
+            padding: 16px 16px;
+            border-radius: 10px;
+            border-color: black;
+            margin-bottom: 25px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+
+        input:focus-within {
+            outline: none;
+            border-color: #007cc2;
+            border-width: 3px;
+        }
+
+        textarea:focus-within {
+            outline: none;
+            border-color: #007cc2;
+            border-width: 3px;
+        }
+
+        button {
+            background-color: #ffc220;
+            border-radius: 20px;
+            border-color: black;
+            font-size: 22px;
+            padding: 10px 18px;
+            text-align: center;
+            display: flex;
+            margin: auto;
+        }
+
+        button:hover {
+            opacity: 80%;
+            cursor: pointer;
+        }
+        /* Navigation bar styling */
+        .navbar {
+            background-color: #007cc2; /* Dark blue background for the navigation bar */
+        }
+
+        /* Walmart logo styling */
+        .navbar img {
+            height: 50px;
+            padding: 0px 0;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        /* Navigation link styling */
+        .navbar-nav .nav-link {
+            color: white; /* White text for better contrast */
+            margin-right: 15px; /* Spacing between navigation links */
+        }
+
+        /* Active navigation link styling */
+        .navbar-nav .nav-link.active {
+            color: #007cc2; /* Highlight color for the active page */
+        }
+
+        /* Hover effect for navigation links */
+        .navbar-nav .nav-link:hover {
+            color: #007cc2; /* Highlight color when hovering over links */
+        }
+    </style>
+</head>
+<body>
+   <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='walmart.png') }}" alt="Walmart Logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/document">Document</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/contact-us">Contact us</a>
+            </li>
+            <!-- Add more navigation items here -->
+        </ul>
+       </div>
+    </nav>
+    <form action="https://formspree.io/f/xnqeledo" method="POST" class="form-background">
+        <h1 style="color: black;">Contact us</h1>
+        <input type="text" name="first" placeholder="First Name" autocomplete="off" required>
+        <input type="text" name="last" placeholder="Last Name" autocomplete="off" required>
+        <input type="email" name="email" placeholder="Email Address" autocomplete="off" required>
+        <textarea rows="5" cols="60" name="message" placeholder="Enter text" autocomplete="off" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    <footer style="background-color: #007cc2; color: white; padding: 20px; text-align: center;">
+       <p>&copy; 2024 Walmart Sales Prediction. All rights reserved.</p>
+       <p>Contact us at <a href="mailto:support@walmart.com" target="_blank" style="color: white;">support@walmart.com</a></p>
+       <div style="margin-top: 10px;">
+           <a href="https://www.facebook.com/walmart" target="_blank" style="color: white; margin-right: 10px;"><i class="fab fa-facebook fa-lg"></i></a>
+           <a href="https://twitter.com/walmart" target="_blank" style="color: white; margin-right: 10px;"><i class="fab fa-twitter fa-lg"></i></a>
+           <a href="https://www.linkedin.com/company/walmart" target="_blank" style="color: white;"><i class="fab fa-linkedin fa-lg"></i></a>
+       </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
